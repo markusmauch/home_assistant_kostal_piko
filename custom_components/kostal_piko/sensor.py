@@ -76,7 +76,7 @@ class KostalPikoSensor(SensorEntity):
         This is the only method that should fetch new data for Home Assistant.
         """
         try:
-            _LOGGER.log(f"Kostal Piko: Updating sensor {self.entity_description.name}")
+            _LOGGER.log(1, f"Kostal Piko: Updating sensor {self.entity_description.name}")
             raw_value = self._client.get_data(self._dxs_id)
 
             if self._formatter:
