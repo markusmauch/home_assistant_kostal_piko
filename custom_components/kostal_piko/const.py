@@ -106,7 +106,7 @@ SENSOR_DESCRIPTIONS: tuple[KostalPikoSensorEntityDescription, ...] = (
         description=SensorEntityDescription(
             key="kostal_piko_dc_input_1_current",
             name="Kostal PIKO DC Input 1 Current",
-            device_class=SensorDeviceClass.ENUM,
+            device_class=SensorDeviceClass.CURRENT,
             state_class=SensorStateClass.MEASUREMENT,
             native_unit_of_measurement=ELECTRIC_CURRENT_AMPERE,
             icon="mdi:power-plug"),
@@ -218,6 +218,19 @@ SENSOR_DESCRIPTIONS: tuple[KostalPikoSensorEntityDescription, ...] = (
         dxs_id=67110400,
         formatter=KostalPikoFormatter.format_float
     ),
+
+    # # Grid cos phi
+    # KostalPikoSensorEntityDescription(
+    #     description=SensorEntityDescription(
+    #         key="kostal_piko_grid_cos_phi",
+    #         name="Kostal PIKO Grid COS phi",
+    #         device_class=SensorDeviceClass.FREQUENCY,
+    #         state_class=SensorStateClass.MEASUREMENT,
+    #         native_unit_of_measurement=FREQUENCY_HERTZ,
+    #         icon="mdi:power-plug"),
+    #     dxs_id=67110656,
+    #     formatter=KostalPikoFormatter.format_float
+    # ),
 
     # Phase 1
     KostalPikoSensorEntityDescription(
@@ -603,7 +616,7 @@ SENSOR_DESCRIPTIONS: tuple[KostalPikoSensorEntityDescription, ...] = (
         description=SensorEntityDescription(
             key="kostal_piko_battery_current_direction",
             name="Kostal PIKO Battery Current Direction",
-            device_class=SensorDeviceClass.CURRENT,
+            device_class=SensorDeviceClass.ENUM,
             state_class=SensorStateClass.MEASUREMENT,
             native_unit_of_measurement="None",
             icon="mdi:arrow-left-right"),
