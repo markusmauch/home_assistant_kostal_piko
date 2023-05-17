@@ -70,13 +70,13 @@ class KostalPikoSensor(SensorEntity):
         """Return the unique id of this Sensor Entity."""
         return f"{self.entry_id}_{self._dxs_id}"
 
-    @Throttle(MIN_TIME_BETWEEN_UPDATES)
+    # @Throttle(MIN_TIME_BETWEEN_UPDATES)
     def update(self):
         """Fetch new state data for the sensor.
         This is the only method that should fetch new data for Home Assistant.
         """
         try:
-            _LOGGER.error(f"Kostal Piko: Updating sensor {self.entity_description.name}")
+            _LOGGER.log(f"Kostal Piko: Updating sensor {self.entity_description.name}")
             raw_value = self._client.get_data(self._dxs_id)
 
             if self._formatter:
