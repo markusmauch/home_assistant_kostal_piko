@@ -478,7 +478,7 @@ SENSOR_DESCRIPTIONS: tuple[KostalPikoSensorEntityDescription, ...] = (
             native_unit_of_measurement=None,
             icon="mdi:power-plug"),
         dxs_id=16780032,
-        formatter=KostalPikoFormatter.format_inverter_state
+        formatter=KostalPikoFormatter.format_float
     ),
 
     # Uptime
